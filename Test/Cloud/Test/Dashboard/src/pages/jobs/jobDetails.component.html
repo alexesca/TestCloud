@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Job</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="jobDetails">
+    <ion-grid padding>
+  <ion-row>
+    <ion-col width-100><h1><strong>{{firstName + " " + lastName}}</strong></h1></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-90><div>{{street + " " + zipCode + " " + city + " " + state}}</div></ion-col>
+  </ion-row>
+  <ion-row>
+      <button ion-button clear (click)="presentActionSheet(phoneNumber,true, note)"><ion-icon name="call"></ion-icon> &nbsp;{{ phoneNumber }}</button>
+  </ion-row>
+  <ion-row>
+    &nbsp;
+  </ion-row>
+    <ion-row>
+    <ion-col width-90><strong>{{currentStatus}}</strong>: {{note}}</ion-col>
+  </ion-row>
+  <ion-row>
+    &nbsp;
+  </ion-row>
+  <ion-row>
+    <ion-col ><div>{{jobType}}</div></ion-col>
+    <ion-col ><div>{{Sector}}</div></ion-col>
+    <ion-col ><div>{{createdAt}}</div></ion-col>
+  </ion-row>
+</ion-grid>
+
+<br> <br>
+
+      <ion-list>
+      <ion-list-header>
+          Change Status
+       </ion-list-header>
+       <ion-item (click)="showNotes('sold')">
+         <ion-icon name="card" item-left></ion-icon>
+         Sold       
+       </ion-item>
+       <div *ngIf="showSoldNotes" padding>
+                <ion-row>
+                  <ion-label><strong>Edit notes:</strong></ion-label>
+                </ion-row>
+                <ion-row> 
+                  <ion-textarea [(ngModel)]="note" name="note"></ion-textarea>
+                </ion-row>
+                <ion-row id="alignButtonLeft">
+                  <button ion-button (click)="saveStatus()" full>Save</button>
+                </ion-row>
+                <br>
+            </div>
+       <ion-item (click)="showNotes('inProgress')" >
+         <ion-icon name="eye" item-left></ion-icon>
+         In progress</ion-item>
+       <div *ngIf="showInProgressNotes" padding>
+                <ion-row>
+                  <ion-label><strong>Edit notes:</strong></ion-label>
+                </ion-row>
+                <ion-row> 
+                  <ion-textarea [(ngModel)]="note" name="note"></ion-textarea>
+                </ion-row>
+                <ion-row id="alignButtonLeft">
+                  <button ion-button (click)="saveStatus()" full>Save</button>
+                </ion-row>
+                <br>
+      </div>  
+       <ion-item (click)="showNotes('Didnt buy')">
+         <ion-icon name="close-circle" item-left ></ion-icon>
+         Didn't buy</ion-item>
+     </ion-list>
+     <!--<ion-list>
+       <ion-item>
+         <ion-label>Change status</ion-label>
+        <ion-select [(ngModel)]="currentStatus" (ngModelChange)="statusWasSelected()" style="max-width: 100% !important;">
+          <ion-option value="Did not buy">Did not buy</ion-option>
+          <ion-option value="Sold">Sold</ion-option>
+          <ion-option value="In progress">In progress</ion-option>
+        </ion-select>
+       </ion-item>
+     </ion-list>-->
+
+  <!--<div *ngIf="currentStatus == 'In progress'">
+      <ion-row>
+        <ion-label><strong>Edit notes:</strong></ion-label>
+      </ion-row>
+      <ion-row> 
+        <ion-textarea [(ngModel)]="note" name="note"></ion-textarea>
+      </ion-row>
+      <ion-row id="alignButtonLeft">
+        <button ion-button (click)="saveStatus()" full>Save</button>
+      </ion-row>
+  </div>
+  <div *ngIf="currentStatus == 'Sold'">
+      <ion-row>
+        <ion-label><strong>Edit notes:</strong></ion-label>
+      </ion-row>
+      <ion-row> 
+        <ion-textarea [(ngModel)]="note" name="note"></ion-textarea>
+      </ion-row>
+      <ion-row id="alignButtonLeft">
+        <button ion-button (click)="saveStatus()" full>Save</button>
+      </ion-row>
+  </div>-->
+</ion-content>

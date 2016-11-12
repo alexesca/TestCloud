@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Closing Ratio</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+  <ion-label>Date</ion-label>
+  <ion-datetime displayFormat="YYYY" [(ngModel)]="year" (ionChange)="calculateClosingRatio()" min="2010"  max="2016" defa></ion-datetime>
+  </ion-item>
+  <br>
+<ion-row class="row">
+  <ion-col class="col colQuarter" width-40></ion-col>
+  <ion-col class="col colQuarter">Q1</ion-col>
+  <ion-col class="col colQuarter">Q2</ion-col>
+  <ion-col class="col colQuarter">Q3</ion-col>
+  <ion-col class="col colQuarter">Q4</ion-col>
+  <ion-col class="col colQuarter">Year</ion-col>
+</ion-row>
+<ion-row class="row">
+  <ion-col class="col colStatus" width-40>Sold</ion-col>
+  <ion-col *ngFor="let q of matrix" class="col colValues">{{q.sold.count}}</ion-col>
+</ion-row>
+<ion-row class="row">
+  <ion-col class="col colStatus" width-40>Didn't Buy</ion-col>
+  <ion-col *ngFor="let q of matrix" class="col colValues">{{q.didNotBuy.count}}</ion-col>
+</ion-row>
+<ion-row class="row ">
+  <ion-col class="col colStatus" width-40>In Pro</ion-col>
+  <ion-col *ngFor="let q of matrix" class="col colValues">{{q.inProgress.count}}</ion-col>
+</ion-row>
+<ion-row class="row">
+  <ion-col class="col colStatus" width-40>Total L/R</ion-col>
+  <ion-col *ngFor="let q of matrix" class="col colValues">{{q.totalLeads.count}}</ion-col>
+</ion-row>
+<ion-row class="row">
+  <ion-col class="col colStatus" width-40>Closing Ratio</ion-col>
+  <ion-col *ngFor="let q of matrix" class="col colValues">{{q.closingRatio.count | number : '1.2-2'}}%</ion-col>
+</ion-row>
+<br><br>
+
+
+<!--Second component-->
+<ion-row class="row">
+  <ion-col class="col colQuarter" width-100>Company's Closing Ratio</ion-col>
+</ion-row>
+<ion-row class="row">
+  <ion-col class="col colQuarter" width-40></ion-col>
+  <ion-col class="col colQuarter">Q1</ion-col>
+  <ion-col class="col colQuarter">Q2</ion-col>
+  <ion-col class="col colQuarter">Q3</ion-col>
+  <ion-col class="col colQuarter">Q4</ion-col>
+  <ion-col class="col colQuarter">Year</ion-col>
+</ion-row>
+<ion-row class="row">
+  <ion-col class="col colStatus" width-40>Sold</ion-col>
+  <ion-col *ngFor="let q of matrixCompany" class="col colValues">{{q.sold.count}}</ion-col>
+</ion-row>
+<ion-row class="row">
+  <ion-col class="col colStatus" width-40>Didn't Buy</ion-col>
+  <ion-col *ngFor="let q of matrixCompany" class="col colValues">{{q.didNotBuy.count}}</ion-col>
+</ion-row>
+<ion-row class="row ">
+  <ion-col class="col colStatus" width-40>In Pro</ion-col>
+  <ion-col *ngFor="let q of matrixCompany" class="col colValues">{{q.inProgress.count}}</ion-col>
+</ion-row>
+<ion-row class="row">
+  <ion-col class="col colStatus" width-40>Total L/R</ion-col>
+  <ion-col *ngFor="let q of matrixCompany" class="col colValues">{{q.totalLeads.count}}</ion-col>
+</ion-row>
+<ion-row class="row">
+  <ion-col class="col colStatus" width-40>Closing Ratio</ion-col>
+  <ion-col *ngFor="let q of matrixCompany" class="col colValues">{{q.closingRatio.count | number : '1.2-2'}}%</ion-col>
+</ion-row>
+</ion-content>

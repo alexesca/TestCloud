@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>
+      Sign Up
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding class="login">
+  <form #f="ngForm" (ngSubmit)="signUp(f.value.email.f.value.password)">
+  <ion-label for="email">Email</ion-label>
+  <ion-input type="text" id="userEmail" placeholder="Email" name="email" ngModel></ion-input>
+  <ion-label for="password">Password</ion-label>
+  <ion-input type="password" id="userPassword" placeholder="*********" name="password" ngModel></ion-input>
+  <ion-label for="password">Confirm Password</ion-label>
+  <ion-input type="password" id="userPassword" placeholder="*********" name="password" ngModel></ion-input>
+    <button type="submit"  ion-button>Test signUp</button>
+  </form>
+</ion-content>

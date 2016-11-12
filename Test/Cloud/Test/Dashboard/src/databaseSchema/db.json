@@ -1,0 +1,201 @@
+
+//People collection schema 
+ db.clients.insert({
+      firstName: "firstname",
+      middleName: "middlename",
+      lastName: "latname",
+      gender: "Male",
+      race: "Hispanic", //native american... etc
+      primaryPhoneNumber: {
+          number: "8015003266",
+          carrier: "Sprint",
+          countryCode: "+57",
+          areaCode: "1"
+      }, 
+      otherPhoneNumbers:[{
+          number: "8015003266",
+          carrier: "Sprint",
+          countryCode: "+57",
+          areaCode: "1"
+      }],
+      primaryAddresse:{
+          address: "500 N 200 E",
+          apt: "11",
+          Zip: "8098",
+          City: "Provo",
+          State: "Utah",
+          Country: "United States"
+      }, 
+      otherAddresses:[{
+          address: "500 N 200 E",
+          apt: "11",
+          Zip: "8098",
+          City: "Provo",
+          State: "Utah",
+          Country: "United States"
+      }],
+      primaryEmailAddress: "email@email.com",
+      emailAddresses:[{
+          email: "email"
+      }],
+      trade:["developer","client"]// a client can be an employee
+ })
+
+  //Jobs entity schema
+ db.pipeline.insert({
+      _peopleId: "5806df4c9ea015f5166b7ad3",
+      sector: "Residential",
+      marketing: {
+          _idSource: ObjectId("5806e1279ea015f5166b7ad4"),// what is the source? Should it be IdSource, instead? 
+          _idExtraSource: ObjectId("5806e1279ea015f5166b7ad4")
+      },
+      addresses:[{ // we need to check if we support multiple repairs in different locations but tied to a single contratc
+          street: "500 N 200 E",
+          apt: "11",
+          zipCode: "8098",
+          city: "Provo",
+          state: "Utah",
+          country: "United States",
+      }],
+      lastNote: "greate opportunity",
+      dateLastNote: "00/00/2010",
+      notesHistory: [{
+          note: "greate opportunity",
+          date: "00/00/2010",
+      }],
+      jobType: "RI",
+      currentStatus: "did not buy",
+      CurrentStatusNote: "He liked the price",
+      dateCurrentNoteStatus: "89/90/2123",
+      _idLastModifiedBy: "5806df4c9ea015f5166b7ad3",
+      statusHistory:[{ //to be determined 
+          status: "did not buy",
+          notes: "Wont call back",
+          _id: ObjectId("5806df4c9ea015f5166b7ad3")
+      }], 
+      currentAssignedTo:{
+          _id: ObjectId("5806df4c9ea015f5166b7ad3"),
+          date: "09/09/2019"
+      },
+      assignedToHistory: [{
+          _id: ObjectId("5806df4c9ea015f5166b7ad3"),
+          date: "09/09/2019"
+      }],
+      currentAssignedBy:{
+          _id: ObjectId("5806df4c9ea015f5166b7ad3"),
+          date: "09/09/2019"
+      },
+      assignedByHistory: [{
+          _id: ObjectId("5806df4c9ea015f5166b7ad3"),
+          date: "09/09/2019"
+      }],
+ })
+
+
+
+
+
+
+ //Jobs entity schema
+ //Jobs entity schema
+ db.contracts.insert({
+    _idCustomer:ObjectId("5807a86bf8d0c52d78d5140d"),
+    _idSalesRep:ObjectId("5807a86bf8d0c52d78d5140d"),
+    _idCurrentSubContractor: ObjectId("5807a86bf8d0c52d78d5140d"),
+    generatedBy : ObjectId("5807a86bf8d0c52d78d5140d"),
+    sector : "Rural",
+    jobType: "RI",
+    currentStatus: "Working on",
+    currentStatusNote:"Still working on it",
+    CurrentStatusNoteDate:"09/0p/2030",
+    contractAmount:"$90,000",
+    amountLastPaymentReceived: "$2000",
+    lastTypePaymentReceived: "Debit Card",
+    lastDatePaymentDeposited: "90/90/2010",
+    totalAmountPaid: "$3456",
+    lastAmountPaidToSubContractor: "$1500",
+    lastDatePaidToSubContractor: "09/09/2019",
+    owed: "$80,0000",
+    subContractors:[{
+        _id: ObjectId("5807a86bf8d0c52d78d5140d"),
+        amountPaid: [{
+            amount: "$500",
+            date: "09/09/2102"
+        }],
+    }],
+      suplementChangeOrder: [{
+            amount: "$650",
+            description: "Neede to clean gathers",
+            date: "06/45/68"
+          }],
+      paymentsReceived:[{
+          _idPaidBy: ObjectId("5807a86bf8d0c52d78d5140d"),
+          amount: "$4,000",
+          type: "Cash",
+          dateDeposited: "08/08/2018"
+      }],
+    marketing : {
+        source:"Realtor",
+        extraSource : {
+            _id : ObjectId("5807a86bf8d0c52d78d5140d"),
+        },
+    },
+    address:{
+        street:"890 North Av.",
+        apt:"5",
+        zipCode:"56788",
+        city:"Provo",
+        state:"UT",
+        country:"USA",
+    }, 
+    workNotesHistory:[{ 
+        note : "Still working on it... needs more effort",
+        date : "09/0p/2030",
+    }],
+    statusNotesHistory:[{
+        status:"In progress",
+        notes:"Customer does not have permisson to move on",
+        modifiedBy:ObjectId("5807a86bf8d0c52d78d5140d")
+    }],
+    lastModifiedBy:ObjectId("5807a86bf8d0c52d78d5140d"), 
+    currentAssignedTo: {
+        _id:ObjectId("5807a86bf8d0c52d78d5140d"),
+        date: "09/0p/2030",
+    },
+    assignedToHistory:[{
+        _id:ObjectId("5807a86bf8d0c52d78d5140d"),
+        date: "09/0p/2030",
+    }],
+    currentAssignedBy:{
+        _id:ObjectId("5807a86bf8d0c52d78d5140d"),
+        date: "09/0p/2030",
+    },
+    assignedByHistory:[{
+        _id:ObjectId("5807a86bf8d0c52d78d5140d"),
+        date: "09/0p/2030",
+    }]
+    })
+
+
+
+     db.closingRatios.insert({
+         _idCustomer: objectId(""),
+         createdAt: ISODate(),
+         status: "Sold",
+     })
+
+     db.getCollection('closingratios').aggregate(   [
+      
+          { $match: {_idCustomer: ObjectId("5807a86bf8d0c52d78d5140d"),createdAt: { $gte: ISODate("2011-10-20T02:18:29.767Z"), $lte: ISODate("2014-10-20T02:18:29.767Z")}}},
+          { $group : {
+           _id : { 
+                
+               status: "$status"
+           },
+           count: { $sum: 1 }
+      }}
+      
+ ])
+
+
+

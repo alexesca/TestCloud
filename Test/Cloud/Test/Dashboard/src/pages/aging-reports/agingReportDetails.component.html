@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title> Aging Report</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="jobDetails">
+    <ion-grid>
+  <ion-row>
+    <ion-col width-100><h1><strong>{{firstName + " " + lastName}}</strong></h1></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col width-90><div>{{street + " " + zipCode + " " + city + " " + state}}</div></ion-col>
+  </ion-row>
+  <ion-row>
+      <button ion-button   clear (click)="presentActionSheet(phoneNumber, true,'')"><ion-icon name="call"></ion-icon> &nbsp;{{ phoneNumber }}</button>
+      <!--<h2><a href="tel:+1-{{phoneNumber}}" class="button button-positive" style="text-decoration: none;"><ion-icon name="call"></ion-icon> &nbsp;{{ phoneNumber }}</a></h2>-->
+  </ion-row>
+  <ion-row>
+    &nbsp;
+  </ion-row>
+    <ion-row>
+    <ion-col width-90><strong>{{currentStatus}}</strong>: {{note}}</ion-col>
+  </ion-row>
+  <ion-row>
+    &nbsp;
+  </ion-row>
+  <ion-row>
+    <ion-col ><div>{{jobType}}</div></ion-col>
+    <ion-col ><div>{{Sector}}</div></ion-col>
+    <ion-col ><div>{{createdAt}}</div></ion-col>
+  </ion-row>
+  <ion-row>
+    &nbsp;
+  </ion-row>
+    <ion-row>
+      <ion-col >
+        <strong>Sales Rep: </strong>{{  salesRepName }} <br>
+        <strong>Sub Contractor:</strong>  {{ contractorName }} <br>
+        <strong>Contract Amount: </strong>  {{ contractAmount }}<br>
+        <strong>owed: </strong>{{ owed }} <br>
+        <strong>Amount Received: </strong> {{ totalAmountReceived }} 
+      </ion-col>
+    </ion-row>
+ </ion-grid>
+</ion-content>

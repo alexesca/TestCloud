@@ -1,0 +1,19 @@
+<ion-header>
+<ion-toolbar>
+    <ion-title>Pipeline</ion-title>
+    <ion-buttons end>
+      <button ion-button color="royal" (click)="sortPipelineByName()">
+        A-z
+      </button>
+    </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list lines>
+        <job-item *ngFor="let job of jobs" [jobItemObject]="job" (changedStatusOutPut)="statusWasChanged($event)">
+          Loading...
+        </job-item>
+  </ion-list>
+</ion-content>

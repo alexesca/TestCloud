@@ -1,0 +1,79 @@
+
+ //Jobs entity schema
+ db.contracts.insert({
+      _idCustomer:ObjectId("5807a86bf8d0c52d78d5140d"),
+    _idSalesRep:ObjectId("5807a86bf8d0c52d78d5140d"),
+    _idCurrentSubContractor: ObjectId("5807a86bf8d0c52d78d5140d"),
+    generatedBy : ObjectId("5807a86bf8d0c52d78d5140d"),
+    sector : "Rural",
+    jobType: "RI",
+    currentStatus: "Working on",
+    currentStatusNote:"Still working on it",
+    CurrentStatusNoteDate:"09/0p/2030",
+    contractAmount:"$90,000",
+    amountLastPaymentReceived: "$2000",
+    lastTypePaymentReceived: "Debit Card",
+    lastDatePaymentDeposited: "90/90/2010",
+    totalAmountPaid: "$3456",
+    lastAmountPaidToSubContractor: "$1500",
+    lastDatePaidToSubContractor: "09/09/2019",
+    owed: "$80,0000",
+    subContractors:[{
+        _id: ObjectId("5807a86bf8d0c52d78d5140d"),
+        amountPaid: [{
+            amount: "$500",
+            date: "09/09/2102"
+        }],
+    }],
+      suplementChangeOrder: [{
+            amount: "$650",
+            description: "Neede to clean gathers",
+            date: "06/45/68"
+          }],
+      paymentsReceived:[{
+          _idPaidBy: ObjectId("5807a86bf8d0c52d78d5140d"),
+          amount: "$4,000",
+          type: "Cash",
+          dateDeposited: "08/08/2018"
+      }],
+    marketing : {
+        source:"Realtor",
+        extraSource : {
+            _id : ObjectId("5807a86bf8d0c52d78d5140d"),
+        },
+    },
+    address:{
+        street:"890 North Av.",
+        apt:"5",
+        zipCode:"56788",
+        city:"Provo",
+        state:"UT",
+        country:"USA",
+    }, 
+    workNotesHistory:[{ 
+        note : "Still working on it... needs more effort",
+        date : "09/0p/2030",
+    }],
+    statusNotesHistory:[{
+        status:"In progress",
+        notes:"Customer does not have permisson to move on",
+        modifiedBy:ObjectId("5807a86bf8d0c52d78d5140d")
+    }],
+    lastModifiedBy:ObjectId("5807a86bf8d0c52d78d5140d"), 
+    currentAssignedTo: {
+        _id:ObjectId("5807a86bf8d0c52d78d5140d"),
+        date: "09/0p/2030",
+    },
+    assignedToHistory:[{
+        _id:ObjectId("5807a86bf8d0c52d78d5140d"),
+        date: "09/0p/2030",
+    }],
+    currentAssignedBy:{
+        _id:ObjectId("5807a86bf8d0c52d78d5140d"),
+        date: "09/0p/2030",
+    },
+    assignedByHistory:[{
+        _id:ObjectId("5807a86bf8d0c52d78d5140d"),
+        date: "09/0p/2030",
+    }]
+    })

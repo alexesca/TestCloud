@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar primary>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding class="login">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <ion-label for="email">Email</ion-label>
+  <ion-input type="text" id="userEmail" placeholder="Email" name="email" ngModel></ion-input>
+  <ion-label for="password">Password</ion-label>
+  <ion-input type="password" id="userPassword" placeholder="*********" name="password" ngModel></ion-input>
+    <button type="submit"  ion-button>Sign in</button>
+  </form>
+</ion-content>

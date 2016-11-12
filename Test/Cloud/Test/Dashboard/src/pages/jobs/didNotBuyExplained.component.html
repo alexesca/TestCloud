@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Explanation</ion-title>
+    <button  ion-button clear (click)="closeDidNotBuyExplainedModal()">Done</button>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <!--<ion-list radio-group [(ngModel)]="reason">
+        <ion-item *ngFor="let option of didNotBuyReasons" (select)="selectedDidNotBuyExplainedReason()">
+            <ion-label>{{option}}</ion-label>
+            <ion-radio [value]="option" (select)="selectedDidNotBuyExplainedReason()"></ion-radio>
+        </ion-item>
+    </ion-list>-->
+
+    <ion-list no-lines >
+        <ion-list-header class="headerStyle">
+            Didn't Buy Reasons
+        </ion-list-header>
+        <button ion-item  *ngFor="let option of didNotBuyReasons" (click)="selectedDidNotBuyExplainedReason(option)" detail-none padding>
+            <ion-icon name="arrow-back"></ion-icon> {{option}}
+        </button>
+        <ion-list-header class="headerStyle">
+            No Opportunity Reasons
+        </ion-list-header>
+        <button ion-item  *ngFor="let option of noOpportunityReasons" (click)="selectedDidNotBuyExplainedReason(option)" detail-none padding>
+            <ion-icon name="arrow-back"></ion-icon> {{option}}
+        </button>
+    </ion-list>
+</ion-content>
